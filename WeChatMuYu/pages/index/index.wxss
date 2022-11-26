@@ -19,7 +19,7 @@ page {
 
 .se {
 
-  flex: 1;
+  flex: 3;
   text-align: center;
   color: rgb(255, 255, 255);
   position: relative;
@@ -36,7 +36,7 @@ page {
 
 #font {
   animation: mymove 1.5s;
-  font-size: 20px;
+  font-size:30px;
   position: absolute;
   color: rgb(255, 255, 255);
   opacity: 0;
@@ -47,7 +47,7 @@ page {
 
 #default {
   color: white;
-  font-size: 20px;
+  font-size: 30px;
   opacity: 0;
   margin-left: 50%;
   flex: 1;
@@ -56,12 +56,12 @@ page {
 
 @keyframes mymove {
   from {
-      top: 90px;
+      top:80%;
       opacity: 1;
   }
 
   to {
-      top: 1px;
+      top: 20%;
       opacity: 0;
   }
 }

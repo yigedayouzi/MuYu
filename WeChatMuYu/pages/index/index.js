@@ -15,6 +15,7 @@ Page({
         show: 1,
     },
 
+    //音乐播放
     theplay() {
         let srcurl = "audios/damuyu.mp3";
         myaudio.src = srcurl;
@@ -22,36 +23,61 @@ Page({
         myaudio.play();
     },
 
+    //音乐暂停
     thestop() {
         myaudio.stop();
     },
-
-    shows2(){
-      this.setData({
-          id1: 'font',
-      });
-      setTimeout(() => {
-          this.setData({
-              id1: 'default'
-          });
-      }, 1000);
+  
+    //功德+1
+    shows2() {
+        this.setData({
+            id1: 'font',
+        });
+        setTimeout(() => {
+            this.setData({
+                id1: 'default'
+            });
+        }, 1000);
     },
+
+    shows3() {
+        this.setData({
+            id2: 'font',
+        });
+        setTimeout(() => {
+            this.setData({
+                id2: 'default'
+            });
+        }, 1000);
+    },
+
+    //获取存储的功德
+    myget01() {
+        this.setData({
+            value: wx.getStorageSync("01")
+
+        })
     
-    shows3(){
-      this.setData({
-          id2: 'font',
-      });
-      setTimeout(() => {
-          this.setData({
-              id2: 'default'
-          });
-      }, 1000);
     },
 
+    //功德存储
+    myset01() {
+        wx.setStorageSync("01", this.data.value)
+  
+    },
+    onLoad:function(options) {
+        this.myget01();
+    },
+
+    //点击
     click() {
-      
+
+        this.myget01();
+
+        //播放
         this.thestop();
         this.theplay();
+
         this.setData({
             classStyle: 'animal',
             value: this.data.value + 1,
@@ -63,7 +89,7 @@ Page({
             });
         }, 100);
         if (this.data.show == 2) {
-         this.shows2();
+            this.shows2();
         };
         if (this.data.show == 3) {
             this.setData({
@@ -112,7 +138,7 @@ Page({
             }, 1000);
         };
         if (this.data.show == 7) {
-        
+
             this.setData({
                 id6: 'font',
             });
@@ -122,16 +148,18 @@ Page({
                 });
             }, 1000);
             setTimeout(() => {
-              this.setData({
-             show: 1,
-              });
-          },0);
-        }
+                this.setData({
+                    show: 1,
+                });
+            }, 0);
+        };
+
+        this.myset01();
 
     },
 
-   
- 
+
+
 
 }
 )
