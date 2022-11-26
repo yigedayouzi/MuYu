@@ -1,0 +1,20 @@
+<!-- index.wxml -->
+<view class="con">
+  <view class="first">
+    <text class="allgongde">我的功德:{{value}}</text>
+  </view>
+  <view class="se">
+    <text id="{{id1}}">功德+1</text>
+    <text id="{{id2}}">功德+1</text>
+    <text id="{{id3}}">功德+1</text>
+    <text id="{{id4}}">功德+1</text>
+    <text id="{{id5}}">功德+1</text>
+    <text id="{{id6}}">功德+1</text>
+    <view wx:for="{{list}}" wx:key="id">
+      <view play="{{play}}" url="{{item.url}}" id="{{item.id}}">播放</view>
+    </view>
+  </view>
+  <view class="th">
+    <image src="../../images/muyu.jpg" bindtap="click" class="image {{classStyle}}" />
+  </view>
+</view>

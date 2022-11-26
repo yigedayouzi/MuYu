@@ -1,0 +1,77 @@
+/**index.wxss**/
+page {
+  background: black;
+  height: 100%;
+}
+
+.con {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.first {
+  flex: 1;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.se {
+
+  flex: 1;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  position: relative;
+  display: flex;
+}
+
+.allgongde {
+  font-size: 20px;
+}
+
+.th {
+  flex: 2;
+}
+
+#font {
+  animation: mymove 1.5s;
+  font-size: 20px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  flex: 1;
+  margin-left: 50%;
+ transform:translateX(-50%);
+}
+
+#default {
+  color: white;
+  font-size: 20px;
+  opacity: 0;
+  margin-left: 50%;
+  flex: 1;
+  transform:translateX(-50%);
+}
+
+@keyframes mymove {
+  from {
+      top: 90px;
+      opacity: 1;
+  }
+
+  to {
+      top: 1px;
+      opacity: 0;
+  }
+}
+
+.animal {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 851.2rpx;
+  height: 618.8rpx;
+  
+}
